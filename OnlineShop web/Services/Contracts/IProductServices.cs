@@ -4,6 +4,6 @@ namespace ShopOnline.web.Services.Contracts
 {
     public interface IProductServices
     {
-        Task<IEnumerable<ProductDto>>
+        Task<IEnumerable<ProductDto>> productDtos(ProductDto productDto);
     }
 }

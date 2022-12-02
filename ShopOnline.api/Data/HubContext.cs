@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopOnline.api.Entities;
 
-namespace ShopOnline.api.Data
+namespace HubContext.api.Data
 {
-    public class ShopOnlineDbContext : DbContext
+    public class HubContext: DbContext
     {
-        public ShopOnlineDbContext(DbContextOptions<ShopOnlineDbContext> options) : base(options)
+        public HubContext(DbContextOptions<HubContext> options) : base(options)
         {
 
         }
@@ -49,6 +49,5 @@ namespace ShopOnline.api.Data
        public DbSet<Product> Products { get; set; }
        public DbSet<ProductCategory> ProductCategory { get; set; }
        public DbSet<User> Users { get; set; }
-       
     }
 }
