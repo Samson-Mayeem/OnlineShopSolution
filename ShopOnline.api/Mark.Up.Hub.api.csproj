@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShopOnline.Models\ShopOnline.Models.csproj" />
+    <ProjectReference Include="..\ShopOnline.Models\Mark.Up.Hub.Models.csproj" />
   </ItemGroup>
 
 </Project>
