@@ -7,15 +7,15 @@ namespace ShopOnline.api.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly IProductRepository _repository;
+        private readonly HubContext hubContext;
 
-        public ProductRepository(HubContext hubContext)
+        public ProductRepository(DbContext hubContext)
         {
             this.hubContext = hubContext;
         }
         public async Task<IEnumerable<ProductCategory>> GetCategories()
         {
-            var categories = await this.hubDbContext.ProductCategory.ToListAsync();
+            var categories = await this.hubContext.ProductCategory.ToListAsync();
             return categories;
         }
 
@@ -31,7 +31,7 @@ namespace ShopOnline.api.Repositories
 
         public async Task<IEnumerable<Product>> GetItems()
         {
-           var products = await this.hubDbContext.Products.ToListAsync();
+           var products = await this.hubContext.Products.ToListAsync();
             return products;
         }
 

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Mark.Up.Hub.api.Data;
+using Mark.Up.Hub.api;
 using ShopOnline.api.Repositories;
 using ShopOnline.api.Repositories.Contracts;
 
@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<HubDbContext>
+builder.Services.AddDbContext<DbContext>
                 (options => options.UseSqlServer(builder.Configuration.GetConnectionString("MarkCon")));
 
 //To  be injected into each classin each Http request
