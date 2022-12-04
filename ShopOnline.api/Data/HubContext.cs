@@ -9,9 +9,9 @@ namespace HubContext.api.Data
         {
 
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder )
+        /*protected override void OnModelCreating(ModelBuilder modelBuilder )
         {
-            base.OnModelCreating(modelBuilder);
+            *//*base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 1,
@@ -42,8 +42,8 @@ namespace HubContext.api.Data
             {
                 Id = 2,
                 ProductCategoryName = "T-Shirt"
-            });
-        }
+            });*//*
+        }*/
        public DbSet<Cart> Carts { get; set; }
        public DbSet<CartItem> CartItems { get; set; }
        public DbSet<Product> Products { get; set; }

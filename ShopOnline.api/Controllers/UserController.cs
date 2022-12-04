@@ -8,14 +8,7 @@ namespace Mark.Up.Hub.api.Controllers
     [ApiController]
     public class UserController
     {
-        private readonly IUserRepository UserRepository;
-
-        public UserController(IUserRepository userRepository) {
-
-            this.UserRepository = userRepository;
-        }
-        [HttpGet]
-        public async Task<ActionResult< IEnumerable<UserDto>> Get() { }
-
+        
+       
     }
 }

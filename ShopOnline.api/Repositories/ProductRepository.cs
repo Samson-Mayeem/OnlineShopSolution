@@ -1,21 +1,28 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopOnline.api.Entities;
-using Mark.Up.Hub.api;
+using ShopOnline.api;
 using ShopOnline.api.Repositories.Contracts;
+using Mark.Up.Hub.api.Data;
 
 namespace ShopOnline.api.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly HubContext hubContext;
+        private readonly DataContext dataContext;
 
-        public ProductRepository(DbContext hubContext)
+        public ProductRepository(DataContext dataContext)
         {
-            this.hubContext = hubContext;
+            this.dataContext = dataContext;
+        }
+        
+        public async Task<IEnumerable<Product>> GetItems()
+        {
+            var products = await this.dataContext.Products.ToListAsync();
+            return products;
         }
         public async Task<IEnumerable<ProductCategory>> GetCategories()
         {
-            var categories = await this.hubContext.ProductCategory.ToListAsync();
+            var categories = await this.dataContext.ProductCategory.ToListAsync();
             return categories;
         }
 
@@ -29,11 +36,7 @@ namespace ShopOnline.api.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Product>> GetItems()
-        {
-           var products = await this.hubContext.Products.ToListAsync();
-            return products;
-        }
+        
 
         public Task<Product> GetProduct(int id)
         {
