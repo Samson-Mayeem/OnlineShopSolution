@@ -13,8 +13,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//for mssql
+//builder.Services.AddDbContext<DataContext>
+               // (options => options.UseSqlServer(builder.Configuration.GetConnectionString("MarkCon")));
+
+//for mysql
 builder.Services.AddDbContext<DataContext>
-                (options => options.UseSqlServer(builder.Configuration.GetConnectionString("MarkCon")));
+                (options => options.UseMySql(builder.Configuration.GetConnectionString("MarkCon"), new MySqlServerVersion(new Version())));
 
 //To  be injected into each classin each Http request
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
