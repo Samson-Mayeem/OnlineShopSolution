@@ -9,6 +9,5 @@ namespace Mark.Up.Hub.api.Controllers
     public class UserController
     {
         
-       
     }
 }

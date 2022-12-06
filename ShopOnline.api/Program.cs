@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen();
 
 //for mysql
 builder.Services.AddDbContext<DataContext>
-                (options => options.UseMySql(builder.Configuration.GetConnectionString("MarkCon"), new MySqlServerVersion(new Version())));
+                (options => options.UseMySql(builder.Configuration.GetConnectionString("conn"), new MySqlServerVersion(new Version())));
 
 //To  be injected into each classin each Http request
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
