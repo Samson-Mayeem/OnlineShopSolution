@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mark.Up.Hub.Models.DTOs
 {
-    internal class UserDto
+    public class UserDto
     {
     }
 }
