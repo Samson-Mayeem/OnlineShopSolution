@@ -9,8 +9,8 @@ namespace ShopOnline.Models.DTOs
 {
     public class CartItemDto
     {
-        public int Id { get; set; }
-        public string ProductId { get; set; }   
+        public long Id { get; set; }
+        public long ProductId { get; set; }   
         public string productName { get; set; } 
         public string ProductDescription { get; set; }  
         public string ProductImageURL { get; set; }

@@ -5,7 +5,7 @@ namespace ShopOnline.api.Entities
     public class ProductCategory
     {
         [Key]
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string ProductCategoryName { get; set; }
     }
 }

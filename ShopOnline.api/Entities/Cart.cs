@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopOnline.api.Entities
 {
@@ -6,6 +7,7 @@ namespace ShopOnline.api.Entities
     {
         [Key]
         public int Id { get; set; }
+        [ForeignKey("UserId")]
         public int UserId { get; set; }
     }
 }

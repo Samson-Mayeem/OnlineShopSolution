@@ -35,9 +35,6 @@ namespace ShopOnline.api.Repositories
         {
             throw new NotImplementedException();
         }
-
-        
-
         public Task<Product> GetProduct(int id)
         {
             throw new NotImplementedException();

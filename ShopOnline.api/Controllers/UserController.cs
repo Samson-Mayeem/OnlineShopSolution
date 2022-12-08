@@ -1,8 +1,10 @@
 ﻿using Mark.Up.Hub.api.Repositories.Contracts;
 using MediaBrowser.Model.Dto;
 using Microsoft.AspNetCore.Mvc;
+using ShopOnline.api.Extentions;
 using ShopOnline.api.Repositories.Contracts;
 using ShopOnline.Models.DTOs;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Mark.Up.Hub.api.Controllers
 {
@@ -15,29 +17,23 @@ namespace Mark.Up.Hub.api.Controllers
         {
             this.userRepository = userRepository;
         }
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
-        {
-            try
-            {
-                var users = await this.userRepository.
-                if (users == null)
-                {
+        public async Task<IActionResult> GetAll()
+        { 
+        var user = await this.userRepository.GetUsers();
+            try {
+
+                if (user == null)
+                { 
                     return NotFound();
                 }
                 else
                 {
-                    var userDto = users.ConvertToDto(users);
-                    return Ok(userDto);
+                    var userdto = user.ConvertUserToDto();
+                    return Ok(userdto);
                 }
-            }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                                                "Error retrieving data");
-            }
+            catch(Exception ex) { }
+            return user;
         }
-
     }
 }

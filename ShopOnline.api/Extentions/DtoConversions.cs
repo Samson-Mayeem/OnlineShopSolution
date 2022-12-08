@@ -1,11 +1,12 @@
-﻿using ShopOnline.api.Entities;
+﻿using Mark.Up.Hub.Models.DTOs;
+using ShopOnline.api.Entities;
 using ShopOnline.Models.DTOs;
 
 namespace ShopOnline.api.Extentions
 {
     public static class DtoConversions
     {
-        public static IEnumerable<Models.DTOs.ProductDto>
+        public static IEnumerable<ProductDto>
             ConvertToDto(this IEnumerable<Product> Products,
                               IEnumerable<ProductCategory> productCategories)
         {
@@ -22,6 +23,18 @@ namespace ShopOnline.api.Extentions
                       Qty = Product.Qty,
                       CategoryId = Product.CategoryId,
                       CategoryName = Product.ProductName         
+                    }).ToList();
+        }
+        public static IEnumerable<UserDto> ConvertToDto(this IEnumerable<User> Users)
+        {
+            return (from User in Users
+                    select new UserDto
+                    {
+                        Id = User.UserId,
+                        UserName = User.UserName,
+                        UserEmail = User.UserEmail,
+                        Password = User.Password,
+                        ImageUrl = User.ImageUrl
                     }).ToList();
         }
     }
