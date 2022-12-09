@@ -7,7 +7,7 @@ namespace ShopOnline.api.Extentions
     public static class DtoConversions
     {
         public static IEnumerable<ProductDto>
-            ConvertToDto(this IEnumerable<Product> Products,
+            ConvertProductToDto(this IEnumerable<Product> Products,
                               IEnumerable<ProductCategory> productCategories)
         {
             return (from Product in Products
@@ -25,7 +25,7 @@ namespace ShopOnline.api.Extentions
                       CategoryName = Product.ProductName         
                     }).ToList();
         }
-        public static IEnumerable<UserDto> ConvertToDto(this IEnumerable<User> Users)
+        public static IEnumerable<UserDto> ConvertUserToDto(this IEnumerable<User> Users)
         {
             return (from User in Users
                     select new UserDto

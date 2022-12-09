@@ -6,8 +6,8 @@ namespace ShopOnline.api.Entities
     public class Cart
     {
         [Key]
-        public int Id { get; set; }
+        public long Id { get; set; }
         [ForeignKey("UserId")]
-        public int UserId { get; set; }
+        public long UserId { get; set; }
     }
 }
