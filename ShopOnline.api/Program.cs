@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using ShopOnline.api.Repositories.Contracts;
 using Mark.Up.Hub.api.Data;
 using ShopOnline.api.Repositories;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +33,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:7143/", "https://localhost:7143/")
+    .AllowAnyMethod()
+    .WithHeaders(HeaderNames.ContentType)
+    );
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
