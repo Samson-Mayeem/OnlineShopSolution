@@ -1,6 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Mark.Up.Hub.api;
-using Mark.Up.Hub.api.Repositories;
 using ShopOnline.api.Repositories.Contracts;
 using Mark.Up.Hub.api.Data;
 using ShopOnline.api.Repositories;

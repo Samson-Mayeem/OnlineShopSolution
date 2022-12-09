@@ -1,6 +1,7 @@
 ﻿using Mark.Up.Hub.api.Repositories.Contracts;
 using MediaBrowser.Model.Dto;
 using Microsoft.AspNetCore.Mvc;
+using ShopOnline.api.Entities;
 using ShopOnline.api.Extentions;
 using ShopOnline.api.Repositories.Contracts;
 using ShopOnline.Models.DTOs;
@@ -17,23 +18,17 @@ namespace Mark.Up.Hub.api.Controllers
         {
             this.userRepository = userRepository;
         }
-        [HttpGet]
+        List<User> use;
+        /*[HttpGet]
         public async Task<IActionResult> GetAll()
         { 
-        var user = await this.userRepository.GetUsers();
-            try {
-
-                if (user == null)
-                { 
-                    return NotFound();
-                }
-                else
+             foreach(var user in use)
+            {
+                if(user == null)
                 {
-                    var userdto = user.ConvertUserToDto();
-                    return Ok(userdto);
+                    
                 }
-            catch(Exception ex) { }
-            return user;
-        }
+            }
+            return await user;*/
     }
 }

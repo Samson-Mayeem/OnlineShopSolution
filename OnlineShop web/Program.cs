@@ -1,3 +1,4 @@
+using Mark.Up.Hub.web;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using ShopOnline.web;
