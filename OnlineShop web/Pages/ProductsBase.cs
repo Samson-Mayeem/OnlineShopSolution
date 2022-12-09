@@ -4,7 +4,7 @@ using ShopOnline.web.Services.Contracts;
 
 namespace Mark.Up.Hub.web.Pages
 {
-    public class ProductsBase: ComponentBase
+    public class ProductsBase : ComponentBase
     {
         [Inject]
         public IProductServices ProductServices { get; set; }
