@@ -7,9 +7,9 @@ namespace ShopOnline.api.Entities
     {
         [Key]
         public long Id { get; set; }
-        [ForeignKey("CartId")]
+        [ForeignKey("Cart")]
         public int CartId { get; set; }
-        [ForeignKey("ProductId")]
+        [ForeignKey("Product")]
         public int ProductId { get; set; }
         public int Qty { get; set; }
     }
